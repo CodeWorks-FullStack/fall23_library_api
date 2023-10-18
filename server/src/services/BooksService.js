@@ -2,8 +2,8 @@ import { dbContext } from "../db/DbContext.js"
 
 class BooksService {
   async getBooksByLibraryId(libraryIdFromParameters) {
+    // const books = await dbContext.Books.find({ title: 'Twilight' })
     const books = await dbContext.Books.find({ libraryId: libraryIdFromParameters })
-    // const books = await dbContext.Books.findOne({ title: 'Twilight' })
     return books
   }
   async createBook(bookData) {

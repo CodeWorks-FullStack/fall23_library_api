@@ -9,6 +9,6 @@ export const BookSchema = new Schema(
   },
   {
     timestamps: true,
-    // toJSON: {}
+    toJSON: { virtuals: true }
   }
 )
