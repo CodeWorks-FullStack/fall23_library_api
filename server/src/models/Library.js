@@ -12,9 +12,11 @@ export const LibrarySchema = new Schema(
   }
 )
 
+// NOTE we can use a virtual here to grab another piece of data from another collection in our database
+// NOTE the first argument passed to the virtual method is the name of your virtual
 LibrarySchema.virtual('creator', {
-  localField: 'creatorId',
-  ref: 'Account',
-  foreignField: '_id',
-  justOne: true
+  localField: 'creatorId', // this is the property we are using on this object
+  ref: 'Account', // this is the collection we are looking through
+  foreignField: '_id', // this is what should match our local field
+  justOne: true // this will return one object instead of an array of objects
 })
